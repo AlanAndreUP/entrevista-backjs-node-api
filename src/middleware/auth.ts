@@ -14,7 +14,7 @@ export const authenticateToken = (req: AuthenticatedRequest, res: Response, next
   }
 
   try {
-    const user = verifyToken(token); 
+    const user =await verifyToken(token); 
     req.user = user;
     next();
   } catch (error) {
